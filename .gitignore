@@ -1,4 +1,11 @@
-.gradle
+
+*.class
+
+*.properties
+
+target/*
+
 .idea
+
 *.iml
-build/
+/target
