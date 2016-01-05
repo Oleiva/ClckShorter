@@ -1,8 +1,5 @@
 package io.github.oleiva.db;
 
-/**
-
-  */
 public class NextURLUtils {
 
     public static char INITIAL_CHAR = 'a';

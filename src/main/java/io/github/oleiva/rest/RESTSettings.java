@@ -1,16 +1,10 @@
 package io.github.oleiva.rest;
 
-/**
- * Created with IntelliJ IDEA.
- * To change this template use File | Settings | File Templates.
- */
 public final class RESTSettings {
 
 //    private static final String NET_REST_URL = "http://link-in-ua.j.rsnx.ru";
     private static final String NET_REST_URL = "http://localhost:8080";
-
     private static final String LOCAL_REST_URL = "http://localhost:8080";
-
     private static boolean isLocaleMode = false;
 
     public static String getRestUrl() {

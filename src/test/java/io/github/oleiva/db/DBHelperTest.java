@@ -6,12 +6,9 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 /**
-
- *
  * I'm don't have enough experience in junit in mongoDB. But this test is
  * really necessary to check my new method generateNewShort();
  * aaaaaand...I still get the error when building the project. I will do it later
- *
  * You need to change modificator in method generateNewShort() to protected
  * in class DBHelper.
  */

@@ -4,8 +4,6 @@ import com.google.code.morphia.Morphia;
 import com.google.code.morphia.dao.BasicDAO;
 import com.mongodb.Mongo;
 
-
-
 public class KeyValueRepository extends BasicDAO<KeyValue, String> {
 
     public static final String NEXT_SHORT_URL_KEY = "nextShortURL";

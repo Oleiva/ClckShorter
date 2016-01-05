@@ -6,9 +6,6 @@ import org.bson.types.ObjectId;
 import java.util.Date;
 import java.util.List;
 
-/**
-
- */
 @Entity(URLData.IP_COLLECTION_NAME)
 public class URLData {
 	

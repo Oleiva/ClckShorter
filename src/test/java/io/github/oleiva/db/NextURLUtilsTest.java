@@ -4,14 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
-
- */
 public class NextURLUtilsTest {
 
-
     public void assertNextShortURL(String currentUrl, String expectedNextShortUrl) {
-
         String actualNextShortURL = NextURLUtils.getNextUrl(currentUrl);
         assertEquals(expectedNextShortUrl, actualNextShortURL);
     }
@@ -25,7 +20,5 @@ public class NextURLUtilsTest {
         assertNextShortURL("9", "aa");
         assertNextShortURL("aa", "ab");
         assertNextShortURL("999", "aaaa");
-
     }
-
 }

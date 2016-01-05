@@ -2,9 +2,6 @@ package io.github.oleiva.db;
 
 import com.google.code.morphia.annotations.*;
 
-/**
- *
- */
 @Entity(KeyValue.KEY_VALUE_COLLECTON_NAME)
 public class KeyValue {
 

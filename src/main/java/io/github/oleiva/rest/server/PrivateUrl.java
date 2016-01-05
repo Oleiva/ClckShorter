@@ -1,12 +1,8 @@
 package io.github.oleiva.rest.server;
 
-/**
- *
- */
 public class PrivateUrl {
 
     private String url;
-
     private String password;
 
     public String getLongUrl() {

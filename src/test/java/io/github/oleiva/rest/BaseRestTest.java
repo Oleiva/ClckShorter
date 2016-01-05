@@ -9,15 +9,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
-
- */
 public abstract class BaseRestTest {
 
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "ua.in.link.rest.server";
-
     private static final Map<String, String> INIT_PARAMS = new HashMap<>();
-
     private HttpServer httpServer;
 
     static {

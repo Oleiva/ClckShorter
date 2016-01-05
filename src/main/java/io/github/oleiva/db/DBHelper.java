@@ -16,37 +16,20 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 
-/**
- * The DB helper.
-
- */
 public class DBHelper {
-
     private static final    String          SERVER_IP               = "89.253.237.43";
-
     private static final    String          SERVER_IP2               = "188.231.145.181";
-
     private static final    String          LOCAL_HOST_STR          = "localhost";
-
     private static final    String          LOCAL_HOST_IP           = "127.0.0.1";
-
     private static final    int             RANDOM_STRING_LENGTH    = 5;
-
     private static final    String          LOGGER_NAME             = "ErverLogger";
-
     private static final    Logger          LOGGER                  = Logger.getLogger(LOGGER_NAME);
-
     private        final    Lock            lock                    = new ReentrantLock();
-
     private        final    Morphia         morphia                 = new Morphia();
-
     private        final    IPRepository    ipRepository;
-
     private        final    URLRepository   urlRepository;
     private        final    KeyValueRepository keyValueRepository;
-
     private        final    MongoClient     mongo;
-
     private                 boolean         ignoreLocalHost         = false;
 
     private DBHelper() {
@@ -80,9 +63,7 @@ public class DBHelper {
             String newShortURL = generateNewShort();
             URLData url = new URLData(fullUrl, newShortURL, new Date(),
                     new ArrayList<URLData.DataStat>());
-
             url.setPassword(password);
-
             saveNewNextURL(NextURLUtils.getNextUrl(newShortURL));
             urlRepository.save(url);
             return url;
@@ -96,7 +77,6 @@ public class DBHelper {
         keyValue.setValue(nextShortURL);
         keyValueRepository.updateFirst(keyValueRepository.createQuery().field(KeyValue.KEY_FIELD_NAME).equal(KeyValueRepository.NEXT_SHORT_URL_KEY),
                 keyValueRepository.createUpdateOperations().set(KeyValue.VALUE_FIELD_NAME, nextShortURL));
-
     }
 
     public void incrementStatForURL(URLData url, String country, String OS) {
@@ -120,7 +100,6 @@ public class DBHelper {
         while (containsShortURL(newShortURL)) {
             newShortURL = NextURLUtils.getNextUrl(newShortURL);
         }
-
         return  newShortURL;
     }
 

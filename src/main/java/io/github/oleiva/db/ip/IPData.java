@@ -5,7 +5,6 @@ import org.bson.types.ObjectId;
 
 import java.util.Date;
 
-
 @Entity(IPData.IP_COLLECTION_NAME)
 public class IPData {
 	

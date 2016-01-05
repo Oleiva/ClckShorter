@@ -10,8 +10,6 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertNotNull;
 
-/**
- */
 public class LimitsTest extends BaseRestTest {
 
     DBHelper dbHelper;

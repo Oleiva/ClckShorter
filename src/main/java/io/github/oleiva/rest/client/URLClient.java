@@ -10,26 +10,15 @@ import io.github.oleiva.db.URLData;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * To change this template use File | Settings | File Templates.
- */
 public class URLClient {
 
     protected static final Client CLIENT = Client.create();
-
     private static final Gson GSON = new Gson();
-
     private static final String POST_URL = "/generateShort";
-
     private static final String POST_NEW_URL =  "/rest/postUrl";
-
     private static final String POST_PRIVATE_URL =  "/rest/postPrivateUrl";
-
     private static final String GET_URL = "/";
-
     private static final String GET_STAT = "/rest/statistic/";
-
     private static final String GET_PRIVATE_URL = "/%s/%s";
 
     @Deprecated
@@ -45,22 +34,18 @@ public class URLClient {
         String postContent = String.format("{ \"url\" : \"%s\", \"password\" : \"%s\" }",
                 fullUrl, password);
 
-
         WebResource webResource = CLIENT
                 .resource(getServerURI(POST_PRIVATE_URL));
 
         //webResource.type(MediaType.APPLICATION_JSON);
-
         ClientResponse response = webResource
                 .post(ClientResponse.class, postContent);
 
         String output = response.getEntity(String.class);
-
         return output;
     }
 
     public static String getFullUrl(String shortUrl){
-
         WebResource webResource = CLIENT
                 .resource(getServerURI(GET_URL + shortUrl));
 
@@ -118,7 +103,6 @@ public class URLClient {
     public static String getPrivateUrl(String shortUrl, String password) {
         WebResource webResource = CLIENT
                 .resource(getPrivateUrlResourceURI(shortUrl, password));
-
 
         ClientResponse response = webResource
                 .get(ClientResponse.class);

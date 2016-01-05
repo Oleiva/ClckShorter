@@ -16,24 +16,14 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
-
- */
 @Path("/")
 public class Server {
-
     private static final Gson GSON = new Gson();
-
     private static final String URL_FOR_FETCHING_COUNTRY = "http://api.hostip.info/country.php?ip=";
-
     private static final String NOT_VALID_URL = "URLData not valid";
-
     private static final String INDEX_URL = "in/index.html";
-
     private static final String PASSWORD_URL = "/in/password.html";
-
     private static final String URL_KEY = "###URLData###";
-
     private static final String REDIRECT_STRING = "<html>" + "<head>"
             + "<meta HTTP-EQUIV=\"REFRESH\" content=\"0; url=" + URL_KEY
             + "\">" + "</head>" + "</html>";
@@ -49,7 +39,6 @@ public class Server {
     @GET
     @Path("/")
     public String getIndex() {
-
         return REDIRECT_STRING.replace(URL_KEY, INDEX_URL);
     }
 
@@ -119,10 +108,8 @@ public class Server {
     @GET
     @Path("/rest/statistic/{shortUrl}")
     public String getStatistic(@PathParam("shortUrl") String shortUrl) {
-
         if (shortUrl == null || shortUrl.equals("index.html"))
             return REDIRECT_STRING.replace(URL_KEY, INDEX_URL);
-
         URLData url = DBHelper.getInstance().getFullUrl(shortUrl);
         if (url == null)
             return null;
@@ -161,7 +148,6 @@ public class Server {
         if (wrongPassword) {
             urlBuilder.append("&wrongPassword=true");
         }
-
         return urlBuilder.toString();
     }
 
